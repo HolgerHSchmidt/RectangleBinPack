@@ -47,6 +47,9 @@ public:
 
 	/// Inserts a single rectangle into the bin, possibly rotated.
 	Rect Insert(int width, int height, FreeRectChoiceHeuristic method);
+    
+    /// Places the given rectangle into the bin.
+    void PlaceRect(const Rect &node);
 
 	/// Computes the ratio of used surface area to the total bin area.
 	float Occupancy() const;
@@ -65,9 +68,6 @@ private:
 	/// @param score2 [out] The secondary placement score will be outputted here. This isu sed to break ties.
 	/// @return This struct identifies where the rectangle would be placed if it were placed.
 	Rect ScoreRect(int width, int height, FreeRectChoiceHeuristic method, int &score1, int &score2) const;
-
-	/// Places the given rectangle into the bin.
-	void PlaceRect(const Rect &node);
 
 	/// Computes the placement score for the -CP variant.
 	int ContactPointScoreNode(int x, int y, int width, int height) const;

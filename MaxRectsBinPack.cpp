@@ -95,7 +95,7 @@ void MaxRectsBinPack::Insert(std::vector<RectSize> &rects, std::vector<Rect> &ds
 		int bestRectIndex = -1;
 		Rect bestNode;
 
-		for(size_t i = 0; i < rects.size(); ++i)
+		for(auto i = 0; i < rects.size(); ++i)
 		{
 			int score1;
 			int score2;
